@@ -6,7 +6,7 @@ Rollback the specified number of changes made to the database
 ```yaml
 steps:
 - uses: actions/checkout@v3
-- uses: liquibase-github-actions/rollback-count@v4.26.0
+- uses: liquibase-github-actions/rollback-count@v4.27.0
   with:
     # The root changelog file
     # string
@@ -68,6 +68,21 @@ steps:
     # Optional
     password: ""
 
+    # [PRO] Enable or disable reporting.
+    # bool
+    # Optional
+    reportEnabled: ""
+
+    # [PRO] The name of the report.
+    # string
+    # Optional
+    reportName: ""
+
+    # [PRO] The path to the directory to generate the report.
+    # string
+    # Optional
+    reportPath: ""
+
     # Rollback script to execute
     # string
     # Optional
@@ -90,7 +105,7 @@ The liquibase rollback count action accepts all valid liquibase global options a
 ```yaml
 steps:
   - uses: actions/checkout@v3
-  - uses: liquibase-github-actions/rollback-count@v4.26.0
+  - uses: liquibase-github-actions/rollback-count@v4.27.0
     with:
       changelogFile: ""
       count: ""
