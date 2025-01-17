@@ -6,7 +6,7 @@ Rollback the specified number of changes made to the database
 ```yaml
 steps:
 - uses: actions/checkout@v3
-- uses: liquibase-github-actions/rollback-count@v4.30.0
+- uses: liquibase-github-actions/rollback-count@v4.31.0
   with:
     # The root changelog file
     # string
@@ -83,6 +83,16 @@ steps:
     # Optional
     reportPath: ""
 
+    # [PRO] Setting to prevent the display of exceptions (which might contain SQL) in operation reports. If suppressSql is on, and no value is provided here, it is assumed to also be on.
+    # bool
+    # Optional
+    reportSuppressException: ""
+
+    # [PRO] Setting to prevent the display of changeset SQL in operation reports.
+    # bool
+    # Optional
+    reportSuppressSql: ""
+
     # Rollback script to execute
     # string
     # Optional
@@ -105,7 +115,7 @@ The liquibase rollback count action accepts all valid liquibase global options a
 ```yaml
 steps:
   - uses: actions/checkout@v3
-  - uses: liquibase-github-actions/rollback-count@v4.30.0
+  - uses: liquibase-github-actions/rollback-count@v4.31.0
     with:
       changelogFile: ""
       count: ""
